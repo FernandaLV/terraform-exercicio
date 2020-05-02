@@ -27,7 +27,7 @@ resource "random_shuffle" "random_subnet" {
 }
 
 resource "aws_elb" "web" {
-  name = "terraform-example-elb"
+  name = "terraform-tf-elb"
 
   subnets         = data.aws_subnet_ids.all.ids
   security_groups = ["${aws_security_group.allow-ssh.id}"]
