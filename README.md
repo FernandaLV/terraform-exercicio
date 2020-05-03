@@ -21,7 +21,7 @@ $ nano $HOME/.aws/credentials
 $ nano ~/.aws/credentials
 ```
 
-   - As credenciais estão localizadas na pagina do [labs.vocareum.com](https://labs.vocareum.com) por onde você entrou na sua conta;
+   - As credenciais estão localizadas na pagina do [labs.vocareum.com](https://labs.vocareum.com) por onde você entra na sua conta;
 
 ![tela vocareum](images/vocareum.png)
 
