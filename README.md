@@ -21,11 +21,11 @@ $ nano $HOME/.aws/credentials
 $ nano ~/.aws/credentials
 ```
 
-	- As credenciais estão localizadas na pagina do [labs.vocareum.com](labs.vocareum.com) por onde você entrou na sua conta;
-	[tela_vocareum](images/vocareum.png)
-	- Clique em 'Account Details';
-	- Clique em 'Show' e copie o conteudo que aparece em destaque.
-	[tela_clishow](images/clishow.png)
+   - As credenciais estão localizadas na pagina do [labs.vocareum.com](labs.vocareum.com) por onde você entrou na sua conta;
+[tela_vocareum](images/vocareum.png)
+   - Clique em 'Account Details';
+   - Clique em 'Show' e copie o conteudo que aparece em destaque.
+[tela_clishow](images/clishow.png)
 
 4. Se estiver localmente, colocar a chave:
 	- Pode precisar alterar o caminho que está definido no arquivo [module/variables.tf](module/variables.tf), linha 19.
