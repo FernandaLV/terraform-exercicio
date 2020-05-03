@@ -21,6 +21,17 @@ $ terraform apply -auto-approve
 ```
 
 ```bash
-# parar terraform
+# criar workspace
+$ terraform workspace new dev
+$ terraform apply -auto-approve
+```
+
+```bash
+# parar terraform (lembre-se de realizar para todos os workspace)
 $ terraform destroy -auto-approve
+```
+
+```bash
+# selecionar workspace
+$ terraform workspace select default
 ```
