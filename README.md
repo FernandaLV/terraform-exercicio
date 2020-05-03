@@ -1,21 +1,65 @@
-1. Execute o comando `cd ~/environment/hybridnativecloud-exercises-terraform/demos/Count/` para entrar no diretório do exercício.
-2. Execute o comando `terraform init`
-3. Execute o comando `terraform apply -auto-approve`
-4. Aguarde alguns minutos para que todas as maquinas estejam prontas no ELB. Para chegar até o painel de Load Balancers, entre no serviço EC2 e no menu esquerdo escolha 'Load Balancers'
-   ![still](images/stillinregistration.png)
-5. Quando estiverem todas prontas estarão como na imagem
-   ![inservice](images/inservice2.png)
-6. Utilize o dns do ELB fornecido como saida no terraform para colar no navegador e testar o funcoinamento da Stack
-   ![nginx1](images/nginx1.png)
-7. Agora vá até o arquivo `main.tf`(hybridnativecloud-exercises-terraform/demos/Count) pelo IDE e altere o valor do count para 3
-   ![countmod](images/countmod.png)
-8. Execute novamente o comando `terraform apply -auto-approve`
-   ![apply2](images/apply2.png)
-9.  Note no painel da AWS que a maquina foi criada e já colocado no ELB
-   ![inservice3](images/inservice3.png)
-11. Vá novamente até o arquivo `main.tf` e altere o valor do count para 1
-12. Execute novamente o comando `terraform apply -auto-approve`
-    ![countmod2](images/countmod2.png)
-13. Dessa vez foram 2 destruições de maquina e uma alteração no ELB
-    ![service1](images/inservice1.png)
-14. Execute o comando `terraform destroy -auto-approve`
+# Exercício Terraform
+
+## Primeiros passos
+
+1. Instalar o terraform:
+```bash
+$ ./setup/installTerraform.sh
+```
+
+2. Se estiver localmente, instalar aws no linux:
+```bash
+# instalar aws
+$ sudo apt install awscli
+```
+
+3. Colocar as credenciais da aws:
+```bash
+# credencias no Linux
+$ nano $HOME/.aws/credentials
+# credenciais no terminal do Cloud9 da aws
+$ nano ~/.aws/credentials
+```
+
+	- As credenciais estão localizadas na pagina do [labs.vocareum.com](labs.vocareum.com) por onde você entrou na sua conta;
+	[tela_vocareum](images/vocareum.png)
+	- Clique em 'Account Details';
+	- Clique em 'Show' e copie o conteudo que aparece em destaque.
+	[tela_clishow](images/clishow.png)
+
+4. Se estiver localmente, colocar a chave:
+	- Pode precisar alterar o caminho que está definido no arquivo [module/variables.tf](module/variables.tf), linha 19.
+```bash
+# chave no localhost no Linux
+$ nano $HOME/.ssh/fiap-lab.pem
+``` 
+
+## Executar o projeto
+
+1. Iniciar o terraform
+```bash
+# iniciar terraform
+$ terraform init
+$ terraform apply -auto-approve
+```
+
+2. Criar o ambiente de dev
+```bash
+# criar workspace
+$ terraform workspace new dev
+$ terraform apply -auto-approve
+```
+
+## Comandos para finalizar o projeto
+
+Para excluir o projeto:
+```bash
+# parar terraform (lembre-se de realizar para todos os workspace)
+$ terraform destroy -auto-approve
+```
+
+Para mudar de ambiente:
+```bash
+# selecionar workspace
+$ terraform workspace select default
+```
